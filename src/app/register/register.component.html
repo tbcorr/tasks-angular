@@ -3,10 +3,19 @@
   <p>Create a user and start adding tasks!</p>
   <form class="register">
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" appearance="standard" />
+      <input matInput type="text" placeholder="First Name" required="required" name="firstName" appearance="standard" />
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="text" placeholder="Password" appearance="standard" />
+      <input matInput type="text" placeholder="Last Name" required="required" name="lastName" appearance="standard" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" required="required" name="email" appearance="standard" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Password" required="required" name="password" appearance="standard" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Password Confirm" required="required" name="passwordConfirm" appearance="standard" />
     </mat-form-field>
     <button mat-flat-button color="primary">Register</button>
   </form>
