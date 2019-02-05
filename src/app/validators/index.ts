@@ -4,8 +4,6 @@ export const passwordConfirmValidator:  ValidatorFn = (control: FormGroup): Vali
     const password = control.get('password');
     const passwordConfirm = control.get('passwordConfirm');
 
-    console.log(password && passwordConfirm && password.value !== passwordConfirm.value ? { 'passwordConfirm': false } : null);
-
     return password && passwordConfirm && password.value !== passwordConfirm.value ? { 'passwordConfirm': false } : null;
   };
 }
