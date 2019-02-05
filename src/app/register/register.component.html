@@ -1,22 +1,26 @@
 <div class="component-register">
   <h1 class="mat-headline">Tasks Angular Registration</h1>
   <p>Create a user and start adding tasks!</p>
-  <form class="register">
+  <form [formGroup]="registrationForm" class="register">
     <mat-form-field>
-      <input matInput type="text" placeholder="First Name" required="required" name="firstName" appearance="standard" />
+      <input matInput type="text" formControlName="firstName" placeholder="First Name" required="required" name="firstName" appearance="standard" />
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="text" placeholder="Last Name" required="required" name="lastName" appearance="standard" />
+      <input matInput type="text" formControlName="lastName" placeholder="Last Name" required="required" name="lastName" appearance="standard" />
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" required="required" name="email" appearance="standard" />
+      <input matInput type="email" formControlName="email" placeholder="Email" required="required" name="email" appearance="standard" />
     </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Password" required="required" name="password" appearance="standard" />
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Password Confirm" required="required" name="passwordConfirm" appearance="standard" />
-    </mat-form-field>
+    <div class="form-group-password" formGroupName="password">
+      <mat-form-field>
+        <input matInput type="text" formControlName="password" placeholder="Password" required="required" name="password" appearance="standard" />
+        <mat-error *ngIf="registrationForm.invalid">{{ registrationForm.errors }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" formControlName="passwordConfirm" placeholder="Password Confirm" required="required" name="passwordConfirm" appearance="standard" />
+        <mat-error *ngIf="registrationForm.invalid">Password Mismatch!</mat-error>
+      </mat-form-field>
+    </div>
     <button mat-flat-button color="primary">Register</button>
   </form>
 </div>
